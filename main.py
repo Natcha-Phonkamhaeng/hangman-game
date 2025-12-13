@@ -1,6 +1,8 @@
 from asset import hangman_art as hma
 import random
 
+# 13 Dec 2025, hangman guessing game V1 guessing the whole word with hint
+
 guess_dict = {
     "dog": "opposite of cat",
     "fish": "can not live without water",
