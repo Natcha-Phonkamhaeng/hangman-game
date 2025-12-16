@@ -3,36 +3,23 @@ import random
 
 # 13 Dec 2025, hangman guessing game V1 guessing the whole word with hint
 
-guess_dict = {
-    "dog": "opposite of cat",
-    "fish": "can not live without water",
-    "bird": "have wings",
-    "cat": "opposite of dog",
-    "giraffe": "long neck",
-    "elephant": "long nose",
-    "panda": "china",
-    "worm": "disgusting",
-    "lion": "king of the jungle"
-}
+words = [
+    "python", "hangman", "programming", "developer",
+    "computer", "algorithm", "function", "variable"
+]
 
-random_pair = random.choice(list(guess_dict.items()))
-random_key = random_pair[0]
-random_value = random_pair[1]
-hint = random_value
-com = random_key
+random_words = random.choice(words)
+split_text = " ".join(random_words)
+com = random_words
 
-def main():
-    stages = 6
+def game_logic():
 
-    print(hma.logo)
-
-    while True:
+     while True:
 
         if stages < 0:
             print("YOU LOSE!!")
             break
 
-        print(f"hint: {hint}")
         user_guess = input("enter your guess words: ")
 
         if com == user_guess:
@@ -43,6 +30,25 @@ def main():
             print(hma.stages[stages])
             print(f"number of guesses left {stages}")
             stages -= 1
+
+def main():
+    print(split_text)
+    guess = []
+    stages = 6
+
+    print(hma.logo)
+
+    user_guess = input("enter your guess letter: ")
+    guess.append(user_guess)
+
+    if user_guess in split_text:
+        print("that's is correct")
+        print(guess)
+    else:
+        print("Nope Try another letter!!")
+        print(hma.stages[stages])
+        stages -= 1
+
      
 if __name__ == "__main__":
     main()
