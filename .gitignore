@@ -6,6 +6,5 @@ dist/
 wheels/
 *.egg-info
 test.py
-asset/hangman_word.py
 # Virtual environments
 .venv
